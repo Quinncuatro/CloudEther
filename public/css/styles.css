@@ -1,0 +1,73 @@
+/* If screen size is less than 768 px */
+
+@media only screen and (max-width : 768px) {
+
+}
+
+/* If screen size is more than 768 px */
+@media only screen and (min-width : 768px) {
+	.flash-alert {
+		width: 50% !important;
+	}
+}
+
+/* If screen size is more than 1200 px */
+@media only screen and (min-width : 1200px) {
+
+}
+
+.bold {
+	font-weight:bold;
+}
+
+.block {
+	display:block;
+}
+
+a:focus, button:focus {
+	outline:0 !important;
+}
+
+.form-control {
+	max-width:850px;
+}
+
+.flash-alert {
+	width: 90%;
+	text-align: center;
+	margin: auto;
+}
+
+.tool-tip, .tool-tip:hover, .tool-tip:visited {
+	color:#2c3e50;
+	text-decoration: none !important;
+	font-weight:bold;
+}
+
+.tool-tip:hover {
+	text-decoration: underline;
+}
+
+.topHeader {
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+nav.navbar * a:hover {
+	color:#D0D0D0 !important;
+}
+
+input.btn-link, input.btn-link:focus {
+	outline:0 !important;
+	color: #2c3e50;
+	font-weight:bold;
+	padding: 0;
+}
+
+input.btn-link:hover {
+	color: #2c3e50;
+}
+
+form.btn-link-form {
+	margin-bottom: 0;
+}
