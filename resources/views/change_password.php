@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="inputNewPassword" class="col-lg-2 control-label">New Password:</label>
+          <label for="inputNewPassword" class="col-lg-2 control-label">New Password (<?php echo Config::get('security/passwordLength') ?>+ Characters):</label>
           <div class="col-lg-10">
             <input type="password" class="form-control" id="inputNewPassword" placeholder="New Password" name="user_newpassword" autocomplete="off">
           </div>

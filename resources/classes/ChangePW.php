@@ -82,13 +82,18 @@
 			if (isset($_POST['user_currentpassword'], $_POST['user_newpassword'], $_POST['user_repeatpassword'], $_SESSION['user_name'])) {
 				if ($this->verifyClientPW($_SESSION['user_name'], $_POST['user_currentpassword'])) {
 					if ($_POST['user_newpassword'] == $_POST['user_repeatpassword']) {
-						if ($this->setClientPW($_SESSION['user_name'], $_POST['user_newpassword'])) {
-							FlashMessage::flash('ChangePWSuccess', 'Your password was changed successfully');
-							header('Location: /changepw.php');
-							exit();
+						if (strlen($_POST['user_newpassword']) >= Config::get('security/passwordLength')) {
+							if ($this->setClientPW($_SESSION['user_name'], $_POST['user_newpassword'])) {
+								FlashMessage::flash('ChangePWSuccess', 'Your password was changed successfully');
+								header('Location: /changepw.php');
+								exit();
+							}
+							else {
+								$this->setErrorAndQuit('Your password could not be changed due to a database error. Please try again.');
+							}
 						}
 						else {
-							$this->setErrorAndQuit('Your password could not be changed due to a database error. Please try again.');
+							$this->setErrorAndQuit('The new password must be ' .  Config::get('security/passwordLength') . '+ characters long. Please try again.');
 						}
 					}
 					else {
@@ -110,13 +115,18 @@
 			if (isset($_POST['user_currentpassword'], $_POST['user_newpassword'], $_POST['user_repeatpassword'], $_SESSION['user_name'])) {
 				if ($this->verifyAdminPW($_SESSION['user_name'], $_POST['user_currentpassword'])) {
 					if ($_POST['user_newpassword'] == $_POST['user_repeatpassword']) {
-						if ($this->setAdminPW($_SESSION['user_name'], $_POST['user_newpassword'])) {
-							FlashMessage::flash('ChangePWSuccess', 'Your password was changed successfully');
-							header('Location: /changepw.php');
-							exit();
+						if (strlen($_POST['user_newpassword']) >= Config::get('security/passwordLength')) {
+							if ($this->setAdminPW($_SESSION['user_name'], $_POST['user_newpassword'])) {
+								FlashMessage::flash('ChangePWSuccess', 'Your password was changed successfully');
+								header('Location: /changepw.php');
+								exit();
+							}
+							else {
+								$this->setErrorAndQuit('Your password could not be changed due to a database error. Please try again.');
+							}
 						}
 						else {
-							$this->setErrorAndQuit('Your password could not be changed due to a database error. Please try again.');
+							$this->setErrorAndQuit('The new password must be ' .  Config::get('security/passwordLength') . '+ characters long. Please try again.');
 						}
 					}
 					else {
