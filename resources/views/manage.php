@@ -18,10 +18,10 @@
 	      	<div class="col-md-12">
 			    <?php
 			        // Show potential feedback from the register object
-			        if (flashMessage::flashIsSet('ManageHubError')) {
+			        if (FlashMessage::flashIsSet('ManageHubError')) {
 			            FlashMessage::displayFlash('ManageHubError', 'error');
 			        }
-			        elseif (flashMessage::flashIsSet('ManageHubMessage')) {
+			        elseif (FlashMessage::flashIsSet('ManageHubMessage')) {
 			            FlashMessage::displayFlash('ManageHubMessage', 'message');
 			        }
 			    ?>
