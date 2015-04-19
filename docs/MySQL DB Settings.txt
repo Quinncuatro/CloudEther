@@ -1,7 +1,7 @@
 #Create database;
 CREATE DATABASE IF NOT EXISTS softethermanager;
 
-#Create a MySQL user to have full permission o nthe database
+#Create a MySQL user to have full permission on the database
 CREATE USER 'seuser'@'127.0.0.1' IDENTIFIED BY '6bX&7UI$ysq!jJUB';
 GRANT ALL PRIVILEGES ON softethermanager.* TO 'seuser'@'127.0.0.1';
 FLUSH PRIVILEGES;
@@ -12,7 +12,7 @@ USE softethermanager;
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin`(
 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-username VARCHAR(32) NOT NULL,
+username VARCHAR(64) NOT NULL,
 email VARCHAR(64) NULL,
 password VARCHAR(128) NOT NULL,
 name VARCHAR(64) NOT NULL,
@@ -25,8 +25,18 @@ INSERT INTO admin (username, email, password, name, created) VALUES('administrat
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients`(
 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-username VARCHAR(32) NOT NULL,
+username VARCHAR(64) NOT NULL,
 email VARCHAR(64) NULL,
 password VARCHAR(128) NOT NULL,
 name VARCHAR(64) NOT NULL,
 created DATETIME NOT NULL);
+
+#Create hubs table
+DROP TABLE IF EXISTS `hubs`;
+CREATE TABLE IF NOT EXISTS `hubs`(
+id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(256) NOT NULL,
+password VARCHAR(256) NOT NULL,
+client_id_fk BIGINT UNSIGNED NOT NULL,
+created DATETIME NOT NULL,
+FOREIGN KEY (client_id_fk ) REFERENCES clients(id));

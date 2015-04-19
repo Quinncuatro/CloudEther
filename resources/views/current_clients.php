@@ -16,10 +16,10 @@
 			<div class="col-md-12">
 		    	<?php
 			        // Show potential feedback from the Clients object
-			        if (flashMessage::flashIsSet('ClientsError')) {
+			        if (FlashMessage::flashIsSet('ClientsError')) {
 			            FlashMessage::displayFlash('ClientsError', 'error');
 			        }
-			        elseif (flashMessage::flashIsSet('ClientsMessage')) {
+			        elseif (FlashMessage::flashIsSet('ClientsMessage')) {
 			            FlashMessage::displayFlash('ClientsMessage', 'message');
 			        }
 		    	?>

@@ -2,8 +2,9 @@
 	//Start a session as this will be necessary on virtually every page
 	session_start();
 	
-	//Get the web root
 	define("RESOURCE_DIR", __DIR__ . "/../");
+	define("CREATE_HUB_SCRIPT", __DIR__ . "/../scripts/createHub.sh");
+	define("DELETE_HUB_SCRIPT", __DIR__ . "/../scripts/deleteHub.sh");
 	define("PUBLIC_DIR", __DIR__ . "/../../public");
 
 	//Declare the database connection and session configuration
@@ -14,6 +15,20 @@
 			'username' => 'seuser',
 			'password' => '6bX&7UI$ysq!jJUB',
 			'db_name' => 'softethermanager'
+		),
+
+		'email' => array(
+			// The from email account
+			'from' => '',
+			'to' => '',
+			'username' => '',
+			'password' => '',
+			'fromName' => '',
+			'server' => '',
+			'port' => '',
+			// Either NA, TLS, SSL
+			'encryption' => 587,
+			'emailSubject' => ''
 		),
 
 		'security' => array(

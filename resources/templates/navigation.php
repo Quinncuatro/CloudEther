@@ -8,7 +8,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <!-- Logo designed and made by Mandy Patterson -->
             <a href="/index.php" class="navbar-brand">CloudEther</a>
         </div>
         <!-- Navigation links for toggling -->

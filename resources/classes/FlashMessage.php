@@ -1,7 +1,7 @@
 <?php
 	// This class simplifies the use of 'flash messages', which are messages that appear on the screen when a result occurs but dissapear when the page is refreshed
 	// This class was heavily influenced by phpacademy
-	Class flashMessage {
+	Class FlashMessage {
 		public static function flash($name, $message = '') {
 			if (isset($_SESSION[$name])) {
 				$message = $_SESSION[$name];

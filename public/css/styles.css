@@ -9,6 +9,9 @@
 	.flash-alert {
 		width: 50% !important;
 	}
+	.jumbotron h1 {
+		font-size: 55px !important;
+	}
 }
 
 /* If screen size is more than 1200 px */
@@ -50,7 +53,12 @@ a:focus, button:focus {
 
 .topHeader {
 	text-align: center;
+	margin-top: 5%;
 	margin-bottom: 5%;
+}
+
+nav.navbar {
+	margin-bottom: 0 !important;
 }
 
 nav.navbar * a:hover {

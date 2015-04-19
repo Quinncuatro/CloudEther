@@ -8,18 +8,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/index.php" class="navbar-brand">CloudEther Admin</a>
+            <a href="/index.php" class="navbar-brand">CloudEther</a>
         </div>
         <!-- Navigation links for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
-			<!-- Right links on the navbar -->
-			<ul class="nav navbar-nav navbar-right">
+            <!-- Right links on the navbar -->
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="/index.php">Home</a></li>
+                <li><a href="/contact.php">Contact</a></li>
+                <li><a href="/client/manage.php">Manage</a></li>
                 <li><a href="/changepw.php">Change Password</a></li>
-                <li><a href="/admin/currentclients.php">Clients</a></li>
-                <li><a href="/admin/newaccount.php">New Account</a></li>
-				<li><a href="/admin.php?logout">Logout</a></li>
-			</ul>
+                <li><a href="/account.php?logout">Logout</a></li>
+            </ul>
         </div>
     </div>
 </nav>

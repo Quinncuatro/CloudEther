@@ -9,7 +9,7 @@
 		header ('location: /admin.php');
 	}
 	elseif (LoginCheck::isLoggedIn()) {
-		return 'logged in';
+		header ('location: /client/manage.php');
 	}
 	else {
 		require_once(RESOURCE_DIR . '/views/not_logged_in.php');

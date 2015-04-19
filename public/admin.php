@@ -5,7 +5,7 @@
 	}
 
 	if (LoginCheck::isLoggedInAsAdmin()) {
-		require_once(RESOURCE_DIR . '/views/admin_logged_in.php');
+		header ('location: /admin/currentclients.php');
 	}
 	elseif (LoginCheck::isLoggedIn()) {
 		header ('location: /account.php');

@@ -32,10 +32,19 @@
 
 		private function deleteClient($username) {
 			if (isset($username)) {
-				$stmt = $this->db_connection->prepare('DELETE FROM clients WHERE username = ?');
+				$stmt = $this->db_connection->prepare('SELECT id FROM clients WHERE username = ?');
 				if ($stmt->execute(array($username))) {
-					return true;
-				}
+					if ($userid = $stmt->fetchColumn()) {
+						$stmt = null;
+						$stmt = $this->db_connection->prepare('DELETE FROM hubs WHERE client_id_fk = ?');
+						if ($stmt->execute(array($userid))) {
+							$stmt = $this->db_connection->prepare('DELETE FROM clients WHERE id = ?');
+							if ($stmt->execute(array($userid))) {
+								return true;
+							}
+						}
+					}
+				}				
 			}
 
 			return false;
