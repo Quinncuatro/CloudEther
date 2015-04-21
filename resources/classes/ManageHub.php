@@ -20,8 +20,10 @@
 
 		private function createHub($hubName, $username) {
 			if (isset($hubName, $username)) {
+				// Replace spaces with underscores
+				$hubName = str_replace(" ", "_", $hubName);
 				if (!empty(CREATE_HUB_SCRIPT)) {
-					exec(CREATE_HUB_SCRIPT . ' ' . $hubName, $outputArray, $return_val);
+					exec(CREATE_HUB_SCRIPT . ' "' . $hubName . '"', $outputArray, $return_val);
 					if ($return_val == 0) {
 						// Cycle through the output
 						foreach ($outputArray as $output) {
@@ -153,7 +155,7 @@
 		public function deleteHub($hubName, $username) {
 			if (isset($hubName, $username)) {
 				if (!empty(DELETE_HUB_SCRIPT)) {
-					exec(DELETE_HUB_SCRIPT . ' ' . $hubName, $outputArray, $return_val);
+					exec(DELETE_HUB_SCRIPT . ' "' .  $hubName . '"', $outputArray, $return_val);
 					if ($return_val == 0) {
 						$stmt = $this->db_connection->prepare('SELECT id FROM clients WHERE username = ?');
 						if ($stmt->execute(array($username))) {
