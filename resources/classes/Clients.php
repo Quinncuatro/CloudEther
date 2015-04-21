@@ -36,8 +36,18 @@
 				if ($stmt->execute(array($username))) {
 					if ($userid = $stmt->fetchColumn()) {
 						$stmt = null;
-						$stmt = $this->db_connection->prepare('DELETE FROM hubs WHERE client_id_fk = ?');
+						$stmt = $this->db_connection->prepare('SELECT name FROM hubs WHERE client_id_fk = ?');
 						if ($stmt->execute(array($userid))) {
+							// If this is not empty, that means the user has hubs associated to them, therefore, they must be deleted.
+							if (!empty($usersHubs = $stmt->fetchAll(PDO::FETCH_ASSOC))) {
+								$manageHub = new ManageHub();
+								foreach ($usersHubs as $userHub) {
+									if (!$manageHub->deleteHub($userHub['name'], $username)) {
+										return false;
+									}
+								}
+							}
+
 							$stmt = $this->db_connection->prepare('DELETE FROM clients WHERE id = ?');
 							if ($stmt->execute(array($userid))) {
 								return true;

@@ -150,7 +150,7 @@
 			return array();
 		}
 
-		private function deleteHub($hubName, $username) {
+		public function deleteHub($hubName, $username) {
 			if (isset($hubName, $username)) {
 				if (!empty(DELETE_HUB_SCRIPT)) {
 					exec(DELETE_HUB_SCRIPT . ' ' . $hubName, $outputArray, $return_val);
