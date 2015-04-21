@@ -66,6 +66,9 @@
 							}
 						}
 					}
+					elseif ($return_val == 2) {
+						throw new Exception('The hub name is already in use');
+					}
 				}
 			}
 
@@ -74,11 +77,16 @@
 
 		public function createHubFromPost() {
 			if (isset($_POST['create_hub'], $_POST['hub_name'])) {
-				if ($this->createHub($_POST['hub_name'], $_SESSION['user_name'])) {
+				try {
+					$this->createHub($_POST['hub_name'], $_SESSION['user_name']);
 					FlashMessage::flash('ManageHubMessage', sanitize('The hub ' . $_POST['hub_name'] . ' was created' ));
 		            header('Location: /client/manage.php');
 		            exit();
 				}
+				catch (exception $e) {
+					$this->setErrorAndQuit($e->getMessage());
+				}
+				
 			}
 			else {
 				$this->setErrorAndQuit('The required fields were not provided');
@@ -190,5 +198,15 @@
 			$this->setErrorAndQuit('The hub ' . $_POST['hub_name'] . ' could not be deleted');
 		}
 
+		public function getHubStatus($hubName) {
+			if (isset($hubName) && !empty(HUB_STATUS_SCRIPT)) {
+				exec(HUB_STATUS_SCRIPT . '-g "' .  $hubName . '"', $outputArray, $return_val);
+				if ($return_val == 6) {
+					return true;
+				}
+			}
+
+			return false;
+		}
 
 	}

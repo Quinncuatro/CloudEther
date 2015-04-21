@@ -5,6 +5,7 @@
 	define("RESOURCE_DIR", __DIR__ . "/../");
 	define("CREATE_HUB_SCRIPT", __DIR__ . "/../scripts/createHub.sh");
 	define("DELETE_HUB_SCRIPT", __DIR__ . "/../scripts/deleteHub.sh");
+	define("HUB_STATUS_SCRIPT", __DIR__ . "/../scripts/vpnStatus.sh");
 	define("PUBLIC_DIR", __DIR__ . "/../../public");
 
 	//Declare the database connection and session configuration

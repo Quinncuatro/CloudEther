@@ -48,6 +48,7 @@
 												<tr>
 													<th>Name</th>
 													<th>Password</th>
+													<th>Status</th>
 													<th>Creation Date</th>
 													<th>Action</th>
 												</tr>
@@ -58,6 +59,12 @@
 									    			foreach ($allHubs as $hub) {
 									    				echo '<tr><td>' . $hub['name'] . '</td>';
 									    				echo '<td>' . $hub['password'] . '</td>';
+									    				if ($manageHub->getHubStatus($hub['name'])) {
+									    					echo '<td style="color:green;">Up</td>';
+									    				}
+									    				else {
+									    					echo '<td style="color:red;">Down</td>';
+									    				}
 									    				echo '<td>' . $hub['created'] . '</td>';
 											?>
 														<td><form class="btn-link-form" method="post" action="/client/manage.php">
@@ -73,6 +80,7 @@
 											    		<td>
 											    			<input type="text" class="form-control" name="hub_name" placeholder="Enter a New Hub Name">
 							    						</td>
+							    						<td></td>
 							    						<td></td>
 							    						<td></td>
 							    						<td style="vertical-align: middle">
