@@ -38,7 +38,10 @@
 				            <div class="panel-body">
 				            	<br />
 				            	<p style="font-weight:normal; max-width:780px">
-			            			Explain how the hubs work and how to connect here
+			            			A hub is essentially a virtual router that is created on the cluster. With hubs, you can create a private VPN connection.
+			            		</p>
+			            		<p style="font-weight:normal; max-width:780px">
+			            			To connect to a hub, you may use either the command-line documentation CloudEther provided you, or the user interface management tool developed by SoftEther. Log in to the hub using the credentials provided by us in the welcome email. If there are issues, send us a message on the “Contact” tab.
 			            		</p><br />
 			            		<div class="row">
 									<div class="col-md-12">
