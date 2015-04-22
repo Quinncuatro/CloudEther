@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source config
+source /var/www/CloudEther/resources/scripts/config
 
 
 if [ -n "$1" ];
