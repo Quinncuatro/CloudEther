@@ -200,7 +200,7 @@
 
 		public function getHubStatus($hubName) {
 			if (isset($hubName) && !empty(HUB_STATUS_SCRIPT)) {
-				exec(HUB_STATUS_SCRIPT . '-g "' .  $hubName . '"', $outputArray, $return_val);
+				exec(HUB_STATUS_SCRIPT . ' -g "' .  $hubName . '"', $outputArray, $return_val);
 				if ($return_val == 6) {
 					return true;
 				}
