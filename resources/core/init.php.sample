@@ -10,6 +10,7 @@
 
 	//Declare the database connection and session configuration
 	$GLOBALS['config'] = array(
+		// Change these values to match your database connection settings
 		'db' => array(
 			'type' => 'mysql',
 			'host' => '127.0.0.1',
@@ -17,19 +18,20 @@
 			'password' => '6bX&7UI$ysq!jJUB',
 			'db_name' => 'softethermanager'
 		),
-
+		
+		// Change these values to match your email connection settings
 		'email' => array(
 			// The from email account
-			'from' => '',
-			'to' => '',
-			'username' => '',
-			'password' => '',
-			'fromName' => '',
-			'server' => '',
-			'port' => '',
+			'from' => 'cloudether@domain.com',
+			'to' => 'administrator@domain.com',
+			'username' => 'cloudether@domain.com',
+			'password' => 'password',
+			'fromName' => 'CloudEther',
+			'server' => 'mail.domain.com',
+			'port' => '587',
 			// Either NA, TLS, SSL
-			'encryption' => 587,
-			'emailSubject' => ''
+			'encryption' => 'TLS',
+			'emailSubject' => 'CloudEther Inquiry'
 		),
 
 		'security' => array(
