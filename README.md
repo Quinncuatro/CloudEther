@@ -8,3 +8,10 @@ Documentation on installing the VPN cluser and the webserver can be found in the
 - Add auditing and error logging to the web application
 - Create a payment system
 - Make all common tasks of managing SoftEther done through the web interface rather than giving them full access to the hub
+
+# Credits
+- Ahmed Nouri
+- Liam Callaghan
+- Charles Iszard
+- Matthew Prahl
+- Henry Quinn
