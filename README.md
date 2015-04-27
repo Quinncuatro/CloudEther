@@ -4,7 +4,7 @@
 CloudEther is a proof of concept project that shows that a Cloud VPN provider can be created with a SoftEther VPN server cluster. CloudEther is a bootstrap based web interface that allows administrators to create client accounts. These client accounts can then create hubs through the interface and can then manage the hub using the SoftEther Management Tool.
 
 ### Installation
-Documentation on installing the VPN cluser and the webserver can be found in the docs folder.
+Documentation on installing the SoftEther VPN cluser and CloudEther can be found in the docs folder.
 
 ### To Do (beyond this project)
 - Add auditing and error logging to the web application
